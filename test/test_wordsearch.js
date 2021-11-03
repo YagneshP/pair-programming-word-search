@@ -32,7 +32,20 @@ describe("#wordSearch()", function() {
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
     ], 'SEINFELD')
-
     assert.isTrue(result);
   });
+
+  it("should return false if letter array is empty", function() {
+    const result = wordSearch([], 'FRANK')
+    assert.isFalse(result);
+  });
+  it('should return true if word present vertically' ,() => {
+    const arr = [
+                  ['c','o'],
+                  ['a','l'],
+                  ['t','k']
+                ];
+    const result = wordSearch(arr, 'cat');
+    assert.isTrue(result);
+  } )
 });
